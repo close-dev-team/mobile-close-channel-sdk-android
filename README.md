@@ -1,1 +1,1 @@
-# close-mobile-channel-sdk-android
+# mobile-close-channel-sdk-android
