@@ -62,9 +62,9 @@ When you have arranged that, then add Close to your Gradle build.
         }
     }
 ```
-Fill in our credentials at (please contact us to retrieve credentials)
-- github_user - Github user name
-- password - Github password / access key
+* Fill in our credentials at (please contact us to retrieve credentials)
+** github_user - Github user name
+** password - Github password / access key
 
 * Then also In your build.gradle in your module add the dependancy in dependancies section
 
