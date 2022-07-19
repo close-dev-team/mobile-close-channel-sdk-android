@@ -36,8 +36,7 @@ The SDK supports `en_GB`, `en_US`, `nl` and `de` localisations. The default loca
 
 To add the SDK to your project follow the steps in this section.
 
-### Using Cocoapods
-#### Cloning the SDK framework binary
+### Using Gradle build
 ---
 
 ⛔️ IMPORTANT: The SDK framework is in a private github repository. Please contact Close to get credentials to download the SDK.
