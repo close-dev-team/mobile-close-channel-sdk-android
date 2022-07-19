@@ -40,7 +40,7 @@ To add the SDK to your project follow the steps in this section.
 #### Cloning the SDK framework binary
 ---
 
-⛔️ IMPORTANT: The SDK framework is in a private github repository. Please contact Close to get credentials to download the Close Channel SDK.
+⛔️ IMPORTANT: The SDK framework is in a private github repository. Please contact Close to get credentials to download the SDK.
 
 ---
 
