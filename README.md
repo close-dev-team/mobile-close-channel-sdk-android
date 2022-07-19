@@ -30,3 +30,124 @@ No special permissions are needed
 The SDK supports `en_GB`, `en_US`, `nl` and `de` localisations. The default localisation is `en_GB`.
 
 
+# Quick start
+
+## Step 1: Adding the SDK
+
+To add the SDK to your project follow the steps in this section.
+
+### Using Cocoapods
+#### Cloning the SDK framework binary
+---
+
+⛔️ IMPORTANT: The SDK framework is in a private github repository. Please contact Close to get credentials to download the Close Channel SDK.
+
+---
+
+#### Adding the Close framework
+When you have arranged that, then add Close to your Gradle build.
+
+* In your build.gradle in your module add our (private) repository to the repositories section
+
+```
+    repositories {
+        ...
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
+            credentials {
+                username = github_user
+                password = github_key
+            }
+        }
+    }
+```
+Fill in our credentials at (please contact us to retrieve credentials)
+- github_user - Github user name
+- password - Github password / access key
+
+* Then also In your build.gradle in your module add the dependancy in dependancies section
+
+```
+dependencies {
+    ...
+    implementation "com.thecloseapp.close:close-channel:1.1.0"
+}
+
+```
+Note: Please check out latest version
+
+* Then sync project and build and you are good to go
+
+`pod install --repo-update`
+
+* You are asked for your E-mail address and password. Make sure that you **enter the personal access token you created before as your password**
+* Then you can start using the CloseChannel framework in your code by simply importing it:
+
+```swift
+import CloseChannel
+```
+
+<details>
+<summary>Example of a minimal build.gradle</summary>
+
+```
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.thecloseapp.closechannelsample'
+
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.thecloseapp.closechanneldemo"
+        minSdk 23
+        targetSdk 30
+        versionCode 1
+        versionName "1.0.0"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
+            credentials {
+                username = github_user // Please replace this by given credentials
+                password = github_key // Please replace this by given credentials
+            }
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation "com.thecloseapp.close:close-channel:1.0.4"
+}
+
+```
+
+</details>
+
