@@ -173,7 +173,7 @@ You can configure this by following these steps:
 ⚠️ For testing purposes you can use the url `https://api.sdk-sandbox.closetest.nl:16443/`, but this should be replaced later with the URL that Close provides to your company.
 
 <details>
-  <summary>Sample close_channel.json</summary>
+  <summary>Example of close_channel.json</summary>
 
 ```json
 {
