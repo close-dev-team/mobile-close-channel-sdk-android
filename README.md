@@ -66,7 +66,7 @@ When you have arranged that, then add Close to your Gradle build.
   * github_user - Github user name
   * password - Github password / access key
 
-* Then also In your build.gradle in your module add the dependancy in dependancies section
+* In your build.gradle in your module add the SDK dependancy in dependancies section
 
 ```
 dependencies {
@@ -77,9 +77,9 @@ dependencies {
 ```
 Note: Please check out if you are using the latest version, android studio would probably point out that you can update the version number
 
-* Then sync project and build and you are good to go
+* Sync project and build and you are good to go
 
-* Then you can start using the Close Channel SDK in your code by simply importing it:
+* You can start using the Close Channel SDK in your code by simply importing it:
 
 ```kotlin
 import com.starlightideas.close.sdk.CloseChannelController
