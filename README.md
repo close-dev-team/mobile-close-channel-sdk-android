@@ -149,21 +149,9 @@ dependencies {
 
 ## Step 2: Using the SDK
 
-The CloseChannelController instance is the one you're going to talk to. Let's first create it.
-
-```kotlin
-import com.starlightideas.close.sdk.CloseChannelController
-  
-    ...
-    val closeChannelController = CloseChannelController.getInstance(requireActivity().application)
-    ...
-```
-
-As it is a singleton instance, you can create and use it in any of your classes.
+The Close SDK needs an endpoint to the backend it should to talk to. This URL needs to be configured first.
 
 ### Configuring the Close endpoint URL
-
-When you run this, in the console you will see the message: `The API base URL is not set`. That's because the SDK does not know to which Close endpoint it should to talk to. This URL needs to be configured first.
 
 You can configure this by following these steps:
 
@@ -182,3 +170,18 @@ You can configure this by following these steps:
 ```
 
 </details>
+
+### Adding Close Channel Controller
+The CloseChannelController instance is the one you're going to talk to. Let's first create it.
+
+```kotlin
+import com.starlightideas.close.sdk.CloseChannelController
+  
+    ...
+    val closeChannelController = CloseChannelController.getInstance(requireActivity().application)
+    ...
+```
+
+As it is a singleton instance, you can create and use it in any of your classes.
+
+If you run this and you see in the log you will  the message: `The API base URL is not set` then make sure it is configured like above. 
