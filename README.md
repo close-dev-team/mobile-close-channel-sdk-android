@@ -75,17 +75,14 @@ dependencies {
 }
 
 ```
-Note: Please check out latest version
+Note: Please check out if you are using the latest version, android studio would probably point out that you can update the version number
 
 * Then sync project and build and you are good to go
 
-`pod install --repo-update`
+* Then you can start using the Close Channel SDK in your code by simply importing it:
 
-* You are asked for your E-mail address and password. Make sure that you **enter the personal access token you created before as your password**
-* Then you can start using the CloseChannel framework in your code by simply importing it:
-
-```swift
-import CloseChannel
+```kotlin
+import com.starlightideas.close.sdk.CloseChannelController
 ```
 
 <details>
