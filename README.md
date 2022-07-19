@@ -95,12 +95,12 @@ plugins {
 }
 
 android {
-    namespace 'com.thecloseapp.closechannelsample'
+    namespace 'com.thecloseapp.sample'
 
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.thecloseapp.closechanneldemo"
+        applicationId "com.thecloseapp.sample"
         minSdk 23
         targetSdk 30
         versionCode 1
