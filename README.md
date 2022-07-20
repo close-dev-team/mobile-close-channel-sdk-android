@@ -193,36 +193,40 @@ If you run this and you see in the log you will  the message: `The API base URL 
 When the SDK is correctly set up we can continue connecting to the Close platform. This starts with registering a user on our platform.
 
 ```kotlin
+// Could also be done in an Fragment or ViewModel
+class YourActivity : AppCompatActivity() {
 
-class YourActivity {
+    private lateinit var binding: ActivityYourBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val uniqueId = "testId" // This should be replaced by a uniqueId for the user or be null
-        val nickname = "testNick" // This should be replaced by the nickname of the user or be null
-
-        registerUser(uniqueId, nickname)
+        binding.openMessage.setOnClickListener() {
+            registerUser()
+        }
     }
 
-    // Call this function where you want to start using the close platform. i.e. after starting the app
-    private fun registerUser(uniqueId: String?, nickname: String?) {
-    
+    private fun registerUser() {
         // This can take a while, so you might want to call it asynchronously
-        val closeChannelController = CloseChannelController.getInstance(requireActivity().application)
+        val closeChannelController = CloseChannelController.getInstance(application)
 
         val onSuccess = { closeUserId: String ->
             // Save the closeUserId for later use, but for now we just display
-            Toast.makeText(context, "register user with id:${closeUserId}", Toast.LENGTH_LONG).show()
+            Log.d("Close Channel SDK", "register user with id:${closeUserId}")
+            Unit
         }
-        
+
         val onFailure = { closeChannelError: CloseChannelError ->
-            // For now we don't do anything, but it would be good to retry when having no internet
+            // For now we only log, but it would be good to retry when having no internet
+            Log.d("Close Channel SDK", "Error:$closeChannelError")
+            Unit
         }
 
-        closeChannelController.registerUser(uniqueId, nickname, onSuccess, genericOnFailure)
-    }
+        val uniqueId = "testId" // This should be replaced by a uniqueId for the user or be null
+        val nickname = "testNick" // This should be replaced by the nickname of the user or be null
 
+        closeChannelController.registerUser(uniqueId, nickname, onSuccess, onFailure)
+    }
 }
 ```
 
@@ -236,3 +240,30 @@ If the value is null a uniqueId will be generated
 The nickname is the nickname, first name or full name of the user. It is optional so does not have to be specified.
 
 Please make sure to read the reference documentation for more information
+
+## Step 4: Adding a channel
+
+After the user is registered you only should add a channel.
+Please contact Close for the correct Close code for your app. For now you can use `SDKDEMO`
+
+```swift
+    private fun addChannel() {
+        val closeChannelController = CloseChannelController.getInstance(application)
+        val onSuccess = { channel: Channel ->
+            Log.d("Close Channel SDK", "Added channel:${channel.name}")
+            Unit
+        }
+
+        val onFailure = { closeChannelError: CloseChannelError ->
+            // For now we only log, but it would be good to retry when having no internet
+            Log.d("Close Channel SDK", "Error:$closeChannelError")
+            Unit
+        }
+
+        val closeCode = "SDKDEMO"
+        closeChannelController.addChannel(closeCode, onSuccess, onFailure)
+    }
+```
+
+>⚠️ Note that you should only add a channel once. When you try to add another channel with the same Close code, you'll receive an error. You can use the `getCloseChannels` function to check if a channel is already available, before adding it. See the section **Tying it all together** below for an example.
+
