@@ -380,4 +380,45 @@ class YourActivity : AppCompatActivity() {
 }
 ```
 
+# Congratulations!
+
+Your app is now integrated with the Close platform! To improve and make it ready for production please check out the sections below.
+
+## Use the correct Close endpoint URL and Close code
+Change the `api_base_url` to the correct once you received from Close. Also make sure to use the right Close code. It can happen that the one for a Testing or Staging environment differs from the one on the Production environment.
+
+# Where to continue from here?
+
+## SDK Reference Documentation
+
+The code samples in the sections above have been simplified by not showing all parameters. Make sure you read the [SDK reference documentation](./doc/SDK%20Reference%20Documentation/) for all details.
+
+## Error handling
+
+Additionally, in the code samples above, error handling has been greatly simplified. You should improve on error handling and add retries, [which is explained in detail here](./doc/error_handling.md).
+
+## Push notifications
+
+Messages are meaning nothing if your users don't read them. Be sure you connect
+the Close push notifications. It's not hard, we do most of the work for you. [Continue reading here](./doc/push_notifications.md).
+
+## List of channels
+
+If you want to integrate with multiple channels and want to implement an overview of channels, [be sure to checkout this document](./doc/list_of_channels.md)
+
+## Create your own flows
+
+With the Close Builder you can create your own flows to send to your users. Use the account provided by Close to login and start building!
+
+![](https://github.com/close-dev-team/mobile-close-channel-sdk-ios/raw/main/doc/images/builder.png)
+
+
+## Problems and solutions
+
+When running into problems, please check out [this document](./doc/problems_and_solutions.md) first.
+
+* Report any issues found in the SDK, documentation or sample code [here](https://github.com/close-dev-team/mobile-close-channel-sdk-android/issues)
+
+Note that references to CL-#### in commit messages refer to issues in our private issue tracker.
+
 
