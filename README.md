@@ -185,3 +185,36 @@ import com.starlightideas.close.sdk.CloseChannelController
 As it is a singleton instance, you can create and use it in any of your classes.
 
 If you run this and you see in the log you will  the message: `The API base URL is not set` then make sure it is configured like above. 
+
+## Step 3: Registering a user
+
+When the SDK is correctly set up we can continue connecting to the Close platform. This starts with registering a user on our platform.
+
+```kotlin
+
+    // Call this function where you want to start using the close platform. i.e. after starting the app
+    private fun registerUser(uniqueId: String?, nickname: String?) {
+        val closeChannelController = CloseChannelController.getInstance(requireActivity().application)
+
+        val onSuccess = { closeUserId: String ->
+            // Save the closeUserId for later use, but for now we just display
+            Toast.makeText(context, "register user with id:${closeUserId}", Toast.LENGTH_LONG).show()
+        }
+        
+        val onFailure = { closeChannelError: CloseChannelError ->
+            // For now we don't do anything, but it would be good to retry when having no internet
+        }
+
+        closeChannelController.registerUser(uniqueId, nickname, onSuccess, genericOnFailure)
+    }
+
+}
+```
+
+A `uniqueId` is the id for a user in Close. 
+Please make sure this is something a user cannot change him/herself, because then it would not be possible to link to the same data. So don't use a phone number or E-mail address. Instead, for example, use an UUID. If the value is null a uniqueId will be generated
+⚠️ `uniqueId` is optional. If the value is null a unique ID will be generated.
+
+The nickname is the nickname, first name or full name of the user. It is optional so does not have to be specified.
+
+Please make sure to read the reference documentation for more information
