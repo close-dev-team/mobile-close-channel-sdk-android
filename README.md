@@ -326,6 +326,9 @@ class YourActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding = ActivityYourBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        
         binding.openChannel.setOnClickListener() {
             registerAndAddChannelAndOpen()
         }
