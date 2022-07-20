@@ -192,8 +192,21 @@ When the SDK is correctly set up we can continue connecting to the Close platfor
 
 ```kotlin
 
+class YourActivity  {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val uniqueId = "testId" // This should be replaced by a uniqueId for the user or be null
+        val nickname = "testNick" // This should be replaced by the nickname of the user or be null
+
+        registerUser(uniqueId, nickname)
+    }
+
     // Call this function where you want to start using the close platform. i.e. after starting the app
     private fun registerUser(uniqueId: String?, nickname: String?) {
+    
+        // This can take a while, so you might want to call it asynchronously
         val closeChannelController = CloseChannelController.getInstance(requireActivity().application)
 
         val onSuccess = { closeUserId: String ->
