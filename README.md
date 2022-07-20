@@ -177,9 +177,11 @@ The CloseChannelController instance is the one you're going to talk to. Let's fi
 ```kotlin
 import com.starlightideas.close.sdk.CloseChannelController
   
+class YourClass {  
     ...
     val closeChannelController = CloseChannelController.getInstance(requireActivity().application)
     ...
+}
 ```
 
 As it is a singleton instance, you can create and use it in any of your classes.
@@ -192,7 +194,7 @@ When the SDK is correctly set up we can continue connecting to the Close platfor
 
 ```kotlin
 
-class YourActivity  {
+class YourActivity {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
