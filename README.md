@@ -227,7 +227,10 @@ class YourActivity {
 ```
 
 A `uniqueId` is the id for a user in Close. 
-Please make sure this is something a user cannot change him/herself, because then it would not be possible to link to the same data. So don't use a phone number or E-mail address. Instead, for example, use an UUID. If the value is null a uniqueId will be generated
+Please make sure this is something a user cannot change him/herself, because then it would not be possible to link to the same data. 
+So don't use a phone number or E-mail address. Instead, for example, use an UUID. 
+If the value is null a uniqueId will be generated
+
 ⚠️ `uniqueId` is optional. If the value is null a unique ID will be generated.
 
 The nickname is the nickname, first name or full name of the user. It is optional so does not have to be specified.
