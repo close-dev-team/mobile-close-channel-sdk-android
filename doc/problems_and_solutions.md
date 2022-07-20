@@ -7,9 +7,9 @@ When setting up the , any errors will appear in the console logging.
 
 #### "Configuration file was not found"
 
-There should be a file called close_channel.json in the (project)/src/main/res/raw directory. 
+There should be a file called 'close_channel.json' in the '(project)/src/main/res/raw directory'. 
 
-![image](https://user-images.githubusercontent.com/108068516/179998950-ea4a5d08-2eb7-4e46-b1c0-db6004333bf2.png)
+![image](./images/SDK_configuration_location.png)
 
 #### "api_base_url property was not found"
 
@@ -23,7 +23,7 @@ i.e.
 
 #### "api_base_url (...) is not a valid url"
 
-There should be a property called api_base_url and it should be filled with the url of the api of the Close SDK. 
+There should be a property called 'api_base_url' and it should be filled with the url of the api of the Close SDK. 
 Please check the url if it is formatted correctly. i.e. check the url in a browser.
 
 #### More info
