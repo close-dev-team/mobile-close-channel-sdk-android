@@ -15,11 +15,11 @@ There should be a file called close_channel.json in the (project)/src/main/res/r
 
 In the 'close_channel.json' there should be a property called 'api_base_url' and it should be filled with the url of the api of the Close SDK
 i.e. 
-'''
+```json
 {
     "api_base_url": "https://api.sdk-sandbox.closetest.nl:16443/"
 }
-'''
+```
 
 #### "api_base_url (...) is not a valid url"
 
