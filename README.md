@@ -226,6 +226,8 @@ If the value is null a uniqueId will be generated
 
 The nickname is the nickname, first name or full name of the user. It is optional so does not have to be specified.
 
+When registerUser is called multiple times, it will return the already existing user. It is not possible to change the uniqueId or to change the nickname with the registerUser call.
+
 Please make sure to read the reference documentation for more information
 
 ## Step 4: Adding a channel
@@ -253,4 +255,129 @@ Please contact Close for the correct Close code for your app. For now you can us
 ```
 
 >⚠️ Note that you should only add a channel once. When you try to add another channel with the same Close code, you'll receive an error. You can use the `getCloseChannels` function to check if a channel is already available, before adding it. See the section **Tying it all together** below for an example.
+
+## Step 5: Showing a channel
+
+To show a channel, you can simple call the function below to open the last added channel. Be sure to do this on the UI thread.
+
+```kotlin
+    private fun openChannel() {
+        val closeChannelController = CloseChannelController.getInstance(application)
+        closeChannelController.openChannelMessagesView(activity = this)
+    }
+```
+
+<details>
+  <summary>An alternative channel view</summary>
+
+  Besides the channel messages view, which shows messages in chat-like way with text balloons, there is an alternative view which is called the Info view. In this view it is possible to show informational messages, tickets and bought products.
+
+  ```kotlin
+    private fun openChannelInfo() {
+        val closeChannelController = CloseChannelController.getInstance(application)
+        closeChannelController.openChannelMessagesView(activity = this)
+    }
+  ```
+
+</details>
+
+<details>
+  <summary>Opening a specific channel</summary>
+
+Alternatively you can retrieve a list of channels and use the channel ID to open a specific channels
+
+```kotlin
+    private fun openFirstChannel() {
+        val closeChannelController = CloseChannelController.getInstance(application)
+        val onSuccess = { channels: List<Channel> ->
+            Log.d("Close Channel SDK", "Number of channels:${channels.size}")
+            if (channels.isNotEmpty()) {
+                val channel = channels[0]
+                closeChannelController.openChannelMessagesView(activity = this, channel.id)
+            }
+        }
+
+        val onFailure = { closeChannelError: CloseChannelError ->
+            // For now we only log, but it would be good to retry when having no internet
+            Log.d("Close Channel SDK", "Error:$closeChannelError")
+            Unit
+        }
+
+        closeChannelController.getChannels(onSuccess, onFailure)
+    }
+```
+</details>
+
+# Tying it all together
+
+As onSuccess callbacks are used to return wether a call succeeded or failed, it is easy to tie everything together:
+The goal would be to open the messages channel with only 1 press of a button
+
+* We register a user (when it already exists, it just returns the existing user)
+* When that succeeds, we check if there are channels available
+  * If so, we open the last added channel
+  * If not, we create a channel and open the just created channel
+
+```kotlin
+class YourActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityYourBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding.openChannel.setOnClickListener() {
+            registerAndAddChannelAndOpen()
+        }
+    }
+
+    private fun registerAndAddChannelAndOpen() {
+        // This can take a while, so you might want to call it asynchronously
+        val closeChannelController = CloseChannelController.getInstance(application)
+
+        val onSuccess = { closeUserId: String ->
+            // Save the closeUserId for later use, but for now we just display
+            Log.d("Close Channel SDK", "register user with id:${closeUserId}")
+            getOrAddChannelAndOpen()
+        }
+
+        val uniqueId = "testId" // This should be replaced by a uniqueId for the user or be null
+        val nickname = "testNick" // This should be replaced by the nickname of the user or be null
+
+        closeChannelController.registerUser(uniqueId, nickname, onSuccess, genericOnFailure)
+    }
+
+    private fun getOrAddChannelAndOpen() {
+        val closeChannelController = CloseChannelController.getInstance(application)
+        val onSuccess = { channels: List<Channel> ->
+            Log.d("Close Channel SDK", "Number of channels:${channels.size}")
+            if (channels.isEmpty()) {
+                addChannelAndOpen()
+            } else {
+                closeChannelController.openChannelMessagesView(activity = this)
+            }
+        }
+
+        closeChannelController.getChannels(onSuccess, genericOnFailure)
+    }
+
+    private fun addChannelAndOpen() {
+        val closeChannelController = CloseChannelController.getInstance(application)
+        val onSuccess = { channel: Channel ->
+            Log.d("Close Channel SDK", "Added channel:${channel.name}")
+            closeChannelController.openChannelMessagesView(activity = this, channel.id)
+        }
+
+        val closeCode = "SDKDEMO"
+        closeChannelController.addChannel(closeCode, onSuccess, genericOnFailure)
+    }
+
+    private val genericOnFailure = { closeChannelError: CloseChannelError ->
+        // For now we only log, but it would be good to retry when having no internet
+        Log.d("Close Channel SDK", "Error:$closeChannelError")
+        Unit
+    }
+}
+```
+
 
