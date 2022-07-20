@@ -3,11 +3,11 @@
 ## Run-time errors
 
 ### Configuring the API base URL
-When setting up the , any errors will appear in the console logging.
+When setting up the close channel config, if there is an error in the logging, this can be done to resolve it.
 
 #### "Configuration file was not found"
 
-There should be a file called 'close_channel.json' in the '(project)/src/main/res/raw directory'. 
+There should be a file called `close_channel.json` in the `(project)/src/main/res/raw directory`. 
 
 ![image](./images/SDK_configuration_location.png)
 
