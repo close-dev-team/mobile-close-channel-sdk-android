@@ -8,6 +8,7 @@ When setting up the , any errors will appear in the console logging.
 #### "Configuration file was not found"
 
 There should be a file called close_channel.json in the (project)/src/main/res/raw directory. 
+
 ![image](https://user-images.githubusercontent.com/108068516/179998950-ea4a5d08-2eb7-4e46-b1c0-db6004333bf2.png)
 
 #### "api_base_url property was not found"
