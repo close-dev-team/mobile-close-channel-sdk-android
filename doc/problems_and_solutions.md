@@ -13,7 +13,7 @@ There should be a file called `close_channel.json` in the `(project)/src/main/re
 
 #### "api_base_url property was not found"
 
-In the 'close_channel.json' there should be a property called 'api_base_url' and it should be filled with the url of the api of the Close SDK
+In the `close_channel.json` there should be a property called `api_base_url` and it should be filled with the url of the api of the Close SDK
 i.e. 
 ```json
 {
