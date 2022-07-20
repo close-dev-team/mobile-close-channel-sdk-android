@@ -193,18 +193,6 @@ If you run this and you see in the log you will  the message: `The API base URL 
 When the SDK is correctly set up we can continue connecting to the Close platform. This starts with registering a user on our platform.
 
 ```kotlin
-// Could also be done in an Fragment or ViewModel
-class YourActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityYourBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding.openMessage.setOnClickListener() {
-            registerUser()
-        }
-    }
 
     private fun registerUser() {
         // This can take a while, so you might want to call it asynchronously
@@ -227,7 +215,6 @@ class YourActivity : AppCompatActivity() {
 
         closeChannelController.registerUser(uniqueId, nickname, onSuccess, onFailure)
     }
-}
 ```
 
 A `uniqueId` is the id for a user in Close. 
