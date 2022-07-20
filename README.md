@@ -1,4 +1,4 @@
-# Mobile Close Channel SDK
+# Mobile Close Channel SDK (for Android)
 
 The Mobile Close Channel SDK allows you to integrate the Close communication platform in your own Android app.
 
