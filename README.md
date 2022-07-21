@@ -85,7 +85,7 @@ Note: Please check out if you are using the latest version, android studio would
 android.enableJetifier=true
 ```
 
-Note: If you have any issues during compilation, please check our [Problems and Solutions](./doc/problems_and_solutions.md#configuring-the-api-base-url) about configuring the api base ur
+Note: If you have any issues during compilation, please check our [Problems and Solutions](./doc/problems_and_solutions.md#adding-the-close-framework) about adding the close framework
 
 
 * Sync project and build and you are good to go
@@ -198,7 +198,7 @@ class YourClass {
 
 As it is a singleton instance, you can create and use it in any of your classes.
 
-Note: If you have any issues during running, please check our [Problems and Solutions](./doc/problems_and_solutions.md) about configuring close
+Note: If you have any issues during running, please check our [Problems and Solutions](./doc/problems_and_solutions.md#configuring-the-api-base-url) about configuring the api base url
 
 ## Step 3: Registering a user
 
