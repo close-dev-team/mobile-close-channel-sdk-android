@@ -4,7 +4,7 @@ Please start with the main page on how to integrate the SDK
 * [Main page](../README.md)
 
 For extensive documentation follow these links
-* [SDK reference documentation](./sdk_reference_documentation/)
+* [SDK reference documentation](https://close-dev-team.github.io/mobile-close-channel-sdk-android/-mobile%20-close%20-channel%20-s-d-k/com.starlightideas.close.sdk/index.html)
 * [Error handling](./error_handling.md)
 * [Implementating a list of channels](./list_of_channels.md)
 * [Internal dependencies](./internal_dependencies.md)
