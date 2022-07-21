@@ -46,9 +46,10 @@ To add the SDK to your project follow the steps in this section.
 #### Adding the Close framework
 When you have arranged that, then add Close to your Gradle build.
 
-* In your `build.gradle` in your module add our (private) repository to the repositories section. Also add jcenter() if you don't have it yet.
+* Add our (private) repository to the repositories section. This could be in the `build.gradle` in your module or in the `settings.gradle` (depending on your gradle version)
+* Also add jcenter() if you don't have it yet.
 
-```
+```json
     repositories {
         ...
         jcenter()
@@ -62,8 +63,13 @@ When you have arranged that, then add Close to your Gradle build.
         }
     }
 ```
-Note: If you use the latest gradle, you might have the repositories in the settings.gradle file. Please add our private repo to the repositories section in the `settings.gradle`
-Note 2: Please check our Problems and Solutions about 
+* In gradle.properties make sure you enable jetifier on true
+
+```json
+android.enableJetifier=true
+```
+
+Note: If you have any issues during compilation, please check our Problems and Solutions about adding the close framework
 
 * Fill in our credentials at (please contact us to retrieve credentials)
   * github_user - Github user name
@@ -71,7 +77,7 @@ Note 2: Please check our Problems and Solutions about
 
 * In your build.gradle in your module add the SDK dependancy in dependancies section
 
-```
+```json
 dependencies {
     ...
     implementation "com.thecloseapp.close:close-channel:1.1.0"
@@ -239,7 +245,7 @@ Please make sure to read the reference documentation for more information
 After the user is registered you only should add a channel.
 Please contact Close for the correct Close code for your app. For now you can use `SDKDEMO`
 
-```swift
+```kotlin
     private fun addChannel() {
         val closeChannelController = CloseChannelController.getInstance(application)
         val onSuccess = { channel: Channel ->
