@@ -37,7 +37,15 @@ rootProject.name = "SdkTest"
 include ':app'
 ```
 </details>
-  
+
+
+#### "Could not find org.jetbrains.anko:anko-common..."
+It tries to find anko (that is used by our SDK), but it can't find it. You have to add jcenter to the list of repositories
+```
+jcenter()
+```
+You can also check out the example above
+
 
 ## Run-time errors
 
