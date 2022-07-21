@@ -7,7 +7,7 @@ The Mobile Close Channel SDK allows you to integrate the Close communication pla
 We are developers ourselves and we know how frustrating it can be to integrate an SDK. But not this time: we will do our best to make it a fun exercise instead! Pinky promise, this won't be an emotional roller coaster: buckles are not needed!
 
 So, take a coffee ☕️, tea 🫖, or havermelk 🥛 and take my hand to guide you through this in a few easy steps.
-If you still run into problems don't hesitate to contact me at renso@thecloseapp.com!
+If you still run into problems don't hesitate to contact us via https://sdk.thecloseapp.com/!
 
 ## Pre-requisites and notes
 
