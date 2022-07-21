@@ -22,16 +22,131 @@ fun registerPushInfo(
 
 
 
-It's a best practice to do this in the `onNewToken` in the FirebaseMessagingService .
+It's a best practice to do this in the `onNewToken` in your own extended class from `FirebaseMessagingService` .
 
 ```kotlin
 
+class YourMessagingService : FirebaseMessagingService() {
 
+    override fun onNewToken(refreshedToken: String) {
+        super.onNewToken(refreshedToken)
+
+        val permissionGranted = (NotificationManagerCompat.from(application).areNotificationsEnabled())
+        
+        val onSuccess = { isPushEnabled: Boolean ->
+            Log.v("Close Channel SDK", "register push - isPushEnabled:${isPushEnabled}")
+            Unit
+        }
+        
+        CloseChannelController.getInstance(application).registerPushInfo(refreshedToken, permissionGranted, onSuccess)
+    }
+
+}
 ```
 
 Note: Please make sure you call this function again if permissionGranted is changed for the user. (i.e. User gave permission)
 
 
+## Showing Close push notifications
+
+When the app is not active, the OS handles the push notifications. When the app is active you need to do that yourself. You can use the `CloseChannelNotification` convenience class to easily distinguish between Close notifications and your own.
+
+If you use `CloseChannelNotification.from(remoteMessage)` it will only return a `CloseNotification`, if it is a push notification from Close, otherwise it returns null. 
+
+```kotlin
+class YourMessagingService : FirebaseMessagingService() {
+
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        super.onMessageReceived(remoteMessage)
+
+        Log.d("Close Channel SDK", "onMessageReceived: remoteMessage:${remoteMessage.notification}")
+
+        val closeNotification = CloseChannelNotification.from(remoteMessage)
+        if (closeNotification != null) {
+            // Create and set a pending intent for starting Your Activity
+            val notificationIntent = Intent(this, YourActivity::class.java) // replace activity with the activity you want to open
+            notificationIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+
+            // Use your own icon to display the push notification
+            val smallIcon = R.mipmap.ic_launcher_round // Replace by own icon
+            val priority = NotificationCompat.PRIORITY_HIGH
+            closeNotification.sendNotification(this, notificationIntent, smallIcon, priority)
+        } else {
+            Log.d("Close Channel SDK", "remoteMessage received but not a close notification")
+            // Custom code to handle own application
+        }
+    }
+```
+
+<details>
+    <summary>Example of a full Custom FirebaseMessagingService</summary>
+        
+```kotlin
+class ApplicationMessagingService : FirebaseMessagingService() {
+
+    override fun onNewToken(refreshedToken: String) {
+        super.onNewToken(refreshedToken)
+        Log.d("Close Channel SDK", "Refreshed token: $refreshedToken")
+
+        val permissionGranted = (NotificationManagerCompat.from(application).areNotificationsEnabled())
+        val onSuccess = { isPushEnabled: Boolean ->
+            Log.v("Close Channel SDK", "register push - isPushEnabled:${isPushEnabled}")
+            Unit
+        }
+        CloseChannelController.getInstance(application).registerPushInfo(refreshedToken, permissionGranted, onSuccess)
+    }
+
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        super.onMessageReceived(remoteMessage)
+
+        Log.d("Close Channel SDK", "onMessageReceived: remoteMessage:${remoteMessage.notification}")
+
+        val closeNotification = CloseChannelNotification.from(remoteMessage)
+        if (closeNotification != null) {
+            // Create and set a pending intent for starting Your Activity
+            val notificationIntent = Intent(this, YourActivity::class.java) // replace activity with the activity you want to open
+            notificationIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+
+            // Use your own icon to display the push notification
+            val smallIcon = R.mipmap.ic_launcher_round // Replace by own icon
+            val priority = NotificationCompat.PRIORITY_HIGH
+            closeNotification.sendNotification(this, notificationIntent, smallIcon, priority)
+        } else {
+            Log.d("Close Channel SDK", "remoteMessage received but not a close notification")
+            // Custom code to handle own push notifications
+        }
+    }
+}
+```
+</details>
+          
+            
+
+## Handling taps
+
+To handle notifications and open the Messages or Info view you can also can use the ```CloseChannelNotification``` convenience class. Not only to easily distinguish between Close notifications and your own, but also to check if the push notification is meant for either the Messages or Info view by checking the `openInInfoView` boolean.
+
+```swift
+// An OS notification was tapped when the app was not active, we can handle it here
+func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+	 let userInfo = response.notification.request.content.userInfo
+	 if let closeChannelNotification = CloseChannelNotification.from(userInfo: userInfo) {
+			 // This is a close notification, let's handle it
+
+			 if let channelId = closeChannelNotification.channelId {
+					 if closeChannelNotification.openInInfoView {
+							 self.closeChannelController.openChannelInfoView(channelId: channelId, window: nil)
+					 } else {
+							 self.closeChannelController.openChannelMessagesView(channelId: channelId, window: nil)
+					 }
+			 }
+
+	 } else {
+			 // Handle any other (none-Close) notifications here
+	 }
+}
+```
 
 ## Not using the CloseChannelNotification convenience class
 
