@@ -81,6 +81,7 @@ Change in the `build.gradle` the targetSdk to 30
         ...
     }
 ```
+#### More info
 
 For more info about adding the SDK check out the README under section [Step 1: Adding the SDK](../README.md#step-1-adding-the-sdk)
 
