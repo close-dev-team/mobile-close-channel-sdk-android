@@ -49,7 +49,7 @@ When you have arranged that, then add Close to your Gradle build.
 * Add our (private) repository to the repositories section. This could be in the `build.gradle` in your module or in the `settings.gradle` (depending on your gradle version)
 * Also add jcenter() if you don't have it yet.
 
-```json
+```
     repositories {
         ...
         jcenter()
@@ -65,7 +65,7 @@ When you have arranged that, then add Close to your Gradle build.
 ```
 * In gradle.properties make sure you enable jetifier on true
 
-```json
+```
 android.enableJetifier=true
 ```
 
@@ -77,7 +77,7 @@ Note: If you have any issues during compilation, please check our Problems and S
 
 * In your build.gradle in your module add the SDK dependancy in dependancies section
 
-```json
+```
 dependencies {
     ...
     implementation "com.thecloseapp.close:close-channel:1.1.0"
