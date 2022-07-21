@@ -5,7 +5,7 @@ Functions in the SDK that can fail have two callbacks.
 * success
 * failure
 
-These are respectively called when then call succeeded or failed. In case of failure a [CloseChannelError](./SDK%20Reference%20Documentation/enums/CloseChannelController.CloseChannelError.md) object is passed which contains details of the error.
+These are respectively called when then call succeeded or failed. In case of failure a [CloseChannelError](https://close-dev-team.github.io/mobile-close-channel-sdk-android/-mobile%20-close%20-channel%20-s-d-k/com.starlightideas.close.sdk/-close-channel-error/index.html) object is passed which contains details of the error.
 
 ## Retrying calls
 It is good practice to retry the calls in case of the `API_CALL_FAILED_SERVER_UNREACHABLE` error. Best to first check if the internet is down, and retry if internet is back up.
