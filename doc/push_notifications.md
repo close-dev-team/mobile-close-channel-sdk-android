@@ -120,32 +120,30 @@ class ApplicationMessagingService : FirebaseMessagingService() {
 ```
 </details>
           
-            
 
-## Handling taps
+## Handling taps on notification
 
-To handle notifications and open the Messages or Info view you can also can use the ```CloseChannelNotification``` convenience class. Not only to easily distinguish between Close notifications and your own, but also to check if the push notification is meant for either the Messages or Info view by checking the `openInInfoView` boolean.
+To handle notifications and open the Messages or Info view you can also can use the `CloseChannelNotification` convenience class. Not only to easily distinguish between Close notifications and your own, but also to check if the push notification is meant for either the Messages or Info view by checking the `openInInfoView` boolean.
 
-```swift
-// An OS notification was tapped when the app was not active, we can handle it here
-func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+```kotlin
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+	
+        if (intent != null) {
+            val tappedOnCloseNotification = CloseChannelNotification.from(intent)
+	    // Is only found, if close notification was found in the intent
+	    if (tappedOnCloseNotification != null) {
+                val channelId = tappedOnCloseNotification.channelId
+                val closeChannelController = CloseChannelController.getInstance(application)
+                if (tappedOnCloseNotification.openInInfoView) {
+                    closeChannelController.openChannelInfoView(this, channelId)
+                } else {
+                    closeChannelController.openChannelMessagesView(this, channelId)
+                }
+            }
+        }
+    }
 
-	 let userInfo = response.notification.request.content.userInfo
-	 if let closeChannelNotification = CloseChannelNotification.from(userInfo: userInfo) {
-			 // This is a close notification, let's handle it
-
-			 if let channelId = closeChannelNotification.channelId {
-					 if closeChannelNotification.openInInfoView {
-							 self.closeChannelController.openChannelInfoView(channelId: channelId, window: nil)
-					 } else {
-							 self.closeChannelController.openChannelMessagesView(channelId: channelId, window: nil)
-					 }
-			 }
-
-	 } else {
-			 // Handle any other (none-Close) notifications here
-	 }
-}
 ```
 
 ## Not using the CloseChannelNotification convenience class
