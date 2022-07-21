@@ -16,10 +16,12 @@ To make an easy start, be sure you have these versions:
 * minSdkVersion 23
 * targetSdkVersion 30
 
-⚠️ For min sdk version you can only use the same or a higher version (if you need a lower version, please let us know)
+⚠️ For min sdk version you can only use the same or a higher version (if you need a lower version, please let us know)</br>
 ⚠️ For target sdk version you can only use the same or a lower version (if you need a higher version, please let us know)
 
-⚠️ tablet are not supported (only phones)
+Our conversational channel SDK works best on phones in only in potrait mode
+
+⚠️ tablet and landscape mode are not supported
 
 ### Permissions
 
