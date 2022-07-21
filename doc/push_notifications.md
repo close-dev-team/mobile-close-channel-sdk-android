@@ -5,7 +5,7 @@
 We need your firebase Cloud messaging key. Contact sdk.thecloseapp.com to where you can send us your key.
 You should be able to find it in your Firebase > Project Settings > Cloud Messaging > Cloud Messagin API (Legacy) > Server Key (token)
 
-## Registering
+## Registering push notification information
 
 To receive push notifications from Close you need to send the firebase token. We also would want to know if the user granted permission to send push notifications.
 
@@ -19,8 +19,6 @@ fun registerPushInfo(
     onFailure: (CloseChannelError) -> Unit? = null
 )
 ```
-
-
 
 It's a best practice to do this in the `onNewToken` in your own extended class from `FirebaseMessagingService` .
 
