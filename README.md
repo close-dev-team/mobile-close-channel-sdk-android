@@ -85,9 +85,6 @@ Note: Please check out if you are using the latest version, android studio would
 android.enableJetifier=true
 ```
 
-Note: If you have any issues during compilation, please check our [Problems and Solutions](./doc/problems_and_solutions.md#adding-the-close-framework) about adding the close framework
-
-
 * Sync project and build and you are good to go
 
 * You can start using the Close Channel SDK in your code by simply importing it:
@@ -95,6 +92,9 @@ Note: If you have any issues during compilation, please check our [Problems and 
 ```kotlin
 import com.starlightideas.close.sdk.CloseChannelController
 ```
+
+Note: If you have any issues during compilation, please check our [Problems and Solutions](./doc/problems_and_solutions.md#adding-the-close-framework) about adding the close framework
+
 
 <details>
 <summary>Example of a minimal build.gradle</summary>
