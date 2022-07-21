@@ -58,6 +58,8 @@ So open `gradle.properties` and add or change the property
 android.enableJetifier=true
 ```
 
+For more info about adding the SDK check out the README under section [Step 1: Adding the SDK](../README.md#step-1-adding-the-sdk)
+
 ## Run-time errors
 
 ### Configuring the API base URL
