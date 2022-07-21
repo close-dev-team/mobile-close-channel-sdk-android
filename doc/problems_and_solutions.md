@@ -57,6 +57,30 @@ So open `gradle.properties` and add or change the property
 ```
 android.enableJetifier=true
 ```
+#### "Error: uses-sdk:minSdkVersion 21 cannot be smaller than version 23 declared in library com.thecloseapp.close:close-channel:..."
+You probably have minSdk 22 (or lower). Unfortunatly we currently do not support that minSDK. Please contact us, if that is an issue.
+
+Change in the `build.gradle` the minSdk to 23
+```    
+    defaultConfig {
+        ...
+        minSdk 23
+        ...
+    }
+```
+
+
+#### "Manifest merger failed : android:exported needs to be explicitly specified for element ..."
+You probably have targetSdk 31 (or higher). Unfortunatly we currently do not support that targetSdk. Please contact us, if that is an issue.
+
+Change in the `build.gradle` the targetSdk to 30
+```    
+    defaultConfig {
+        ...
+        targetSdk 30
+        ...
+    }
+```
 
 For more info about adding the SDK check out the README under section [Step 1: Adding the SDK](../README.md#step-1-adding-the-sdk)
 
