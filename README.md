@@ -63,13 +63,6 @@ When you have arranged that, then add Close to your Gradle build.
         }
     }
 ```
-* In gradle.properties make sure you enable jetifier on true
-
-```
-android.enableJetifier=true
-```
-
-Note: If you have any issues during compilation, please check our Problems and Solutions about adding the close framework
 
 * Fill in our credentials at (please contact us to retrieve credentials)
   * github_user - Github user name
@@ -85,6 +78,15 @@ dependencies {
 
 ```
 Note: Please check out if you are using the latest version, android studio would probably point out that you can update the version number
+
+* In gradle.properties make sure you enable jetifier on true
+
+```
+android.enableJetifier=true
+```
+
+Note: If you have any issues during compilation, please check our [Problems and Solutions](./doc/problems_and_solutions.md) about adding the close framework
+
 
 * Sync project and build and you are good to go
 
