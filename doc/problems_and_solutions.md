@@ -7,7 +7,8 @@
 #### "Build was configured to prefer settings repositories over project repositories but repository ‘GitHubPackages’ was added by build file ‘build.gradle’"
 You have to place the repository as part of the `settings.gradle`. Please look up the repository section in the `settings.gradle` file and add there the repositories. Remove it from the `build.gradle`
 <details>
-    <summary>example settings.gradle</summary>
+<summary>example settings.gradle</summary>
+
 ```
 pluginManagement {
     repositories {
