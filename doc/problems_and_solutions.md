@@ -40,7 +40,8 @@ include ':app'
 
 
 #### "Could not find org.jetbrains.anko:anko-common..."
-It tries to find anko (that is used by our SDK), but it can't find it. You have to add jcenter to the list of repositories
+It tries to find anko (that is used by our SDK), but it can't find it. </br>
+You have to add jcenter to the list of repositories
 ```
     repositories {
         ...
@@ -50,6 +51,12 @@ It tries to find anko (that is used by our SDK), but it can't find it. You have 
 ```
 You can also check out the example above
 
+#### "Duplicate class android.support.customtabs.... found in modules ..."
+You have to enable jetifier as part of the `gradle.properties` file</br>
+So open `gradle.properties` and add or change the property
+```
+android.enableJetifier=true
+```
 
 ## Run-time errors
 
