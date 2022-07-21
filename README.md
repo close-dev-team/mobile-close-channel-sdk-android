@@ -198,7 +198,7 @@ class YourClass {
 
 As it is a singleton instance, you can create and use it in any of your classes.
 
-If you run this and you see in the log you will  the message: `The API base URL is not set` then make sure it is configured like above. 
+Note: If you have any issues during running, please check our [Problems and Solutions](./doc/problems_and_solutions.md) about configuring close
 
 ## Step 3: Registering a user
 
