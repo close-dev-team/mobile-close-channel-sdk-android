@@ -85,7 +85,7 @@ Note: Please check out if you are using the latest version, android studio would
 android.enableJetifier=true
 ```
 
-Note: If you have any issues during compilation, please check our [Problems and Solutions](./doc/problems_and_solutions.md) about adding the close framework
+Note: If you have any issues during compilation, please check our [Problems and Solutions](./doc/problems_and_solutions.md#configuring-the-api-base-url) about configuring the api base ur
 
 
 * Sync project and build and you are good to go
