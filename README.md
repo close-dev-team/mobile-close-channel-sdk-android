@@ -46,7 +46,7 @@ To add the SDK to your project follow the steps in this section.
 #### Adding the Close framework
 When you have arranged that, then add Close to your Gradle build.
 
-* In your build.gradle in your module add our (private) repository to the repositories section
+* In your `build.gradle` in your module add our (private) repository to the repositories section
 
 ```
     repositories {
@@ -61,6 +61,9 @@ When you have arranged that, then add Close to your Gradle build.
         }
     }
 ```
+Note: If you use the latest gradle, you might have the repositories in the settings.gradle file. Please add our private repo to the repositories section in the `settings.gradle`
+
+
 * Fill in our credentials at (please contact us to retrieve credentials)
   * github_user - Github user name
   * password - Github password / access key
