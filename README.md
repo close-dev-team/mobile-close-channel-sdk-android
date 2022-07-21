@@ -432,7 +432,7 @@ Change the `api_base_url` to the correct once you received from Close. Also make
 
 ## SDK Reference Documentation
 
-The code samples in the sections above have been simplified by not showing all parameters. Make sure you read the [SDK reference documentation](./doc/SDK%20Reference%20Documentation/) for all details.
+The code samples in the sections above have been simplified by not showing all parameters. Make sure you read the [SDK reference documentation](https://close-dev-team.github.io/mobile-close-channel-sdk-android/) for all details.
 
 ## Error handling
 
