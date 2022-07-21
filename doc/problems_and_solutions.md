@@ -27,5 +27,5 @@ There should be a property called 'api_base_url' and it should be filled with th
 Please check the url if it is formatted correctly. i.e. check the url in a browser.
 
 #### More info
-For more info about configuration check out the [README](../README.md) under section Step 2: Using the SDK.
+For more info about configuration check out the README under section [Step 2: Using the SDK](../README.md#step-2-using-the-sdk).
 
