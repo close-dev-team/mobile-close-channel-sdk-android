@@ -428,6 +428,19 @@ Your app is now integrated with the Close platform! To improve and make it ready
 ## Use the correct Close endpoint URL and Close code
 Change the `api_base_url` to the correct once you received from Close. Also make sure to use the right Close code. It can happen that the one for a Testing or Staging environment differs from the one on the Production environment.
 
+        
+## Important note
+    
+When you use the callback functions onSuccess and onFailure. Make sure you check the lifecycle, (you could check for onStop), to prevent handling callbacks when the activity or fragment is not running anymore. Example:
+
+```kotlin
+   val onSuccess = { channelList: List<Channel> ->
+       if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
+           displayChannelList(binding.channelList, channelList)
+       }
+   }
+```
+    
 # Where to continue from here?
 
 ## SDK Reference Documentation
@@ -454,10 +467,6 @@ With the Close Builder you can create your own flows to send to your users. Use 
 ![](https://github.com/close-dev-team/mobile-close-channel-sdk-ios/raw/main/doc/images/builder.png)
 
     
-## Important note
-    
-When you use the callback functions onSuccess and onFailure. Make sure you check the lifecycle, (you could check for onStop), to prevent handling callbacks when the activity or fragment is not running anymore.
-
 ## Problems and solutions
 
 When running into problems, please check out [this document](./doc/problems_and_solutions.md) first.
