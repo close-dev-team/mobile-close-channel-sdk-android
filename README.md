@@ -453,6 +453,10 @@ With the Close Builder you can create your own flows to send to your users. Use 
 
 ![](https://github.com/close-dev-team/mobile-close-channel-sdk-ios/raw/main/doc/images/builder.png)
 
+    
+## Important note
+    
+When you use the callback functions onSuccess and onFailure. Make sure you check the lifecycle, (you could check for onStop), to prevent handling callbacks when the activity or fragment is not running anymore.
 
 ## Problems and solutions
 
