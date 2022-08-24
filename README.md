@@ -431,7 +431,7 @@ Change the `api_base_url` to the correct once you received from Close. Also make
         
 ## Important note
     
-When you use the callback functions onSuccess and onFailure. Make sure you check the lifecycle, (you could check for onStop), to prevent handling callbacks when the activity or fragment is not running anymore. Example:
+When you use the callback functions onSuccess and onFailure and you want to update the UI. Make sure you check the lifecycle, (you could check for onStop), to prevent handling callbacks when the activity or fragment is not running anymore. Example:
 
 ```kotlin
    val onSuccess = { channelList: List<Channel> ->
