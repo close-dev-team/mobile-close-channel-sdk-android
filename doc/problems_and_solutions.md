@@ -51,12 +51,14 @@ You have to add jcenter to the list of repositories
 ```
 You can also check out the example above
 
-#### "Duplicate class android.support.customtabs.... found in modules ..."
+#### "Duplicate class android.support.customtabs.ICustomTabsCallback ... found in modules ..."
 You have to enable jetifier as part of the `gradle.properties` file</br>
 So open `gradle.properties` and add or change the property
 ```
 android.enableJetifier=true
 ```
+See also [this stackoverflow page](https://stackoverflow.com/questions/55756647/duplicate-classes-from-androidx-and-com-android-support)
+
 #### "Error: uses-sdk:minSdkVersion 21 cannot be smaller than version 23 declared in library com.thecloseapp.close:close-channel:..."
 You probably have minSdk 22 (or lower). Unfortunatly we currently do not support that minSDK. Please contact us, if that is an issue.
 
