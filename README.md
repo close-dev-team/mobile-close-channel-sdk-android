@@ -435,7 +435,7 @@ When you use the callback functions onSuccess and onFailure and you want to upda
 
 ```kotlin
    val onSuccess = { channelList: List<Channel> ->
-       if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
+       if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
            displayChannelList(binding.channelList, channelList)
        }
    }
