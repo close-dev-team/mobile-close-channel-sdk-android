@@ -182,8 +182,9 @@ You can configure this by following these steps:
   "api_base_url": "https://api.sdk-sandbox.closetest.nl:16443/"
 }
 ```
-
 </details>
+
+See also [close_channel.json in the sample app](./main/sample/CloseChannelSample/app/src/main/res/raw/close_channel.json)
 
 ### Adding Close Channel Controller
 The CloseChannelController instance is the one you're going to talk to. Let's first create it.
