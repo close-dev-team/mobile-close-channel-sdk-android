@@ -151,6 +151,6 @@ If you prefer not to use the CloseChannelNotification class and parse the push n
 ## Sample
 
 Check out these classes in the sample project for more information 
-[Firebase messaging service to pickup firebase messages](./sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/CloseSampleFirebaseMessagingService.kt)
-[Home Fragment with example to send push info](./sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/ui/home/HomeFragment.kt)
+* [Firebase messaging service to pickup firebase messages](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/CloseSampleFirebaseMessagingService.kt)
+* [Home Fragment with example to send push info](./sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/ui/home/HomeFragment.kt)* 
 
