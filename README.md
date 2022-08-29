@@ -34,6 +34,12 @@ The SDK supports `en_GB`, `en_US`, `nl` and `de` localisations. The default loca
 
 # Quick start
 
+Stop ⏹! Start ▶️ with a sample
+
+It is recommended to first start with the [Mobile Close Channel SDK Sample](./sample/CloseChannelSample/) which showcases how to use the SDK and the different features it provides. It talks to a test environment that can be used to test with.
+
+When you've done that you can come back to this page to continue the wonderful journey of integrating Close in your own app.
+
 ## Step 1: Adding the SDK
 
 To add the SDK to your project follow the steps in this section.
