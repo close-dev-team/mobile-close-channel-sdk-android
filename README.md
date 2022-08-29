@@ -184,7 +184,7 @@ You can configure this by following these steps:
 ```
 </details>
 
-See also [close_channel.json in the sample app](./main/sample/CloseChannelSample/app/src/main/res/raw/close_channel.json)
+See also [close_channel.json in the sample app](./sample/CloseChannelSample/app/src/main/res/raw/close_channel.json)
 
 ### Adding Close Channel Controller
 The CloseChannelController instance is the one you're going to talk to. Let's first create it.
