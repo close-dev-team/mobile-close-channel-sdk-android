@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
+
+            credentials {
+                username = "sample"
+                password = "ask_close_for_credentials"
+            }
+        }
+    }
+}
+rootProject.name = "Close Channel Sample"
+include ':app'
