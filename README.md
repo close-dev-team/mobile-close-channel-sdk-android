@@ -179,7 +179,7 @@ You can configure this by following these steps:
 ** Add a string property named `api_base_url` with the URL as the value on the top level inside the json
 ** Add a string property named `api_access_token` with the api access token the top level inside the json
 
-⚠️ For testing purposes you can use the api_base_url `https://api.sdk-sandbox.closetest.nl:16443/` and the api_access_token 'sdk-sandbox-access-token', but this should be replaced later with the URL that Close provides to your company.
+⚠️ For testing purposes you can use the api_base_url `https://api.sdk-sandbox.closetest.nl:16443/` and the api_access_token `sdk-sandbox-access-token`, but this should be replaced later with the URL that Close provides to your company.
 
 <details>
   <summary>Example of close_channel.json</summary>
