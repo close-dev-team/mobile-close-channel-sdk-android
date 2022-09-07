@@ -148,3 +148,9 @@ To handle notifications and open the Messages or Info view you can also can use 
 
 If you prefer not to use the CloseChannelNotification class and parse the push notification message yourself, check out the reference documentation
 
+## Sample
+
+Check out these classes in the sample project for more information 
+* [Firebase messaging service to pickup firebase messages](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/CloseSampleFirebaseMessagingService.kt)
+* [Home Fragment with example to send push info](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/ui/home/HomeFragment.kt) 
+

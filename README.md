@@ -34,6 +34,12 @@ The SDK supports `en_GB`, `en_US`, `nl` and `de` localisations. The default loca
 
 # Quick start
 
+Stop ⏹! Start ▶️ with a sample
+
+It is recommended to first start with the [Mobile Close Channel SDK Sample](./sample/CloseChannelSample/) which showcases how to use the SDK and the different features it provides. It talks to a test environment that can be used to test with.
+
+When you've done that you can come back to this page to continue the wonderful journey of integrating Close in your own app.
+
 ## Step 1: Adding the SDK
 
 To add the SDK to your project follow the steps in this section.
@@ -170,20 +176,23 @@ The Close SDK needs an endpoint to the backend it should to talk to. This URL ne
 You can configure this by following these steps:
 
 * Add a json config file named `close_channel.json` to your res/raw folder
-* Add a string property named `api_base_url` with the URL as the value on the top level inside the json
+** Add a string property named `api_base_url` with the URL as the value on the top level inside the json
+** Add a string property named `api_access_token` with the api access token the top level inside the json
 
-⚠️ For testing purposes you can use the url `https://api.sdk-sandbox.closetest.nl:16443/`, but this should be replaced later with the URL that Close provides to your company.
+⚠️ For testing purposes you can use the api_base_url `https://api.sdk-sandbox.closetest.nl:16443/` and the api_access_token 'sdk-sandbox-access-token', but this should be replaced later with the URL that Close provides to your company.
 
 <details>
   <summary>Example of close_channel.json</summary>
 
 ```json
 {
-  "api_base_url": "https://api.sdk-sandbox.closetest.nl:16443/"
+  "api_base_url": "https://api.sdk-sandbox.closetest.nl:16443/",
+  "api_access_token": "sdk-sandbox-access-token"
 }
 ```
-
 </details>
+
+See also [close_channel.json in the sample app](./sample/CloseChannelSample/app/src/main/res/raw/close_channel.json)
 
 ### Adding Close Channel Controller
 The CloseChannelController instance is the one you're going to talk to. Let's first create it.
