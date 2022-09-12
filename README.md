@@ -14,10 +14,10 @@ If you still run into problems don't hesitate to contact us via https://sdk.thec
 To make an easy start, be sure you have these versions:
 
 * minSdkVersion 23
-* targetSdkVersion 30
+* targetSdkVersion 33
 
 ⚠️ For min sdk version you can only use the same or a higher version (if you need a lower version, please let us know)</br>
-⚠️ For target sdk version you can only use the same or a lower version (if you need a higher version, please let us know)
+Target sdk version is currently the latest. You can only use the same or a lower version (if you need a higher version, please let us know)
 
 Our Close channel SDK works best on phones in only in potrait mode
 
