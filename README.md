@@ -251,7 +251,7 @@ The nickname is the nickname, first name or full name of the user. It is optiona
 
 When registerUser is called multiple times, it will return the already existing user. It is not possible to change the uniqueId or to change the nickname with the registerUser call.
 
-Please make sure to read the [reference documentation](https://close-dev-team.github.io/mobile-close-channel-sdk-android/-mobile%20-close%20-channel%20-s-d-k/com.starlightideas.close.sdk/-close-channel-controller/register-user.html) for more information
+Please make sure to read the [reference documentation](https://close-dev-team.github.io/mobile-close-channel-sdk-android/-mobile%20-close%20-channel%20-s-d-k/com.thecloseapp.close.channel.sdk/-close-channel-controller/register-user.html) for more information
 
 ## Step 4: Adding a channel
 
