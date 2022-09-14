@@ -98,7 +98,7 @@ android.enableJetifier=true
 * You can start using the Close Channel SDK in your code by simply importing it:
 
 ```kotlin
-import com.starlightideas.close.sdk.CloseChannelController
+import com.thecloseapp.close.channel.sdk.CloseChannelController
 ```
 
 Note: If you have any issues during compilation, please check our [Problems and Solutions](./doc/problems_and_solutions.md#adding-the-close-framework) about adding the close framework
@@ -198,7 +198,7 @@ See also [close_channel.json in the sample app](./sample/CloseChannelSample/app/
 The CloseChannelController instance is the one you're going to talk to. Let's first create it.
 
 ```kotlin
-import com.starlightideas.close.sdk.CloseChannelController
+import com.thecloseapp.close.channel.sdk.CloseChannelController
   
 class YourClass {  
     ...
