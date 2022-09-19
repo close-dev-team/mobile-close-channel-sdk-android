@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.starlightideas.close.sdk.CloseChannelController
-import com.starlightideas.close.sdk.CloseChannelError
+import com.thecloseapp.close.channel.sdk.CloseChannelController
+import com.thecloseapp.close.channel.sdk.CloseChannelError
 import com.thecloseapp.closechannelsample.R
 import com.thecloseapp.closechannelsample.databinding.FragmentMessagesBinding
 import kotlinx.coroutines.Dispatchers

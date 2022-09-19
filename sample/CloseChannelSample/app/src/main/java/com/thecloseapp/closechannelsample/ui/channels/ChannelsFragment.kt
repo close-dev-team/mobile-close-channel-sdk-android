@@ -15,9 +15,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
-import com.starlightideas.close.sdk.Channel
-import com.starlightideas.close.sdk.CloseChannelController
-import com.starlightideas.close.sdk.CloseChannelError
+import com.thecloseapp.close.channel.sdk.Channel
+import com.thecloseapp.close.channel.sdk.CloseChannelController
+import com.thecloseapp.close.channel.sdk.CloseChannelError
 import com.thecloseapp.closechannelsample.R
 import com.thecloseapp.closechannelsample.databinding.FragmentChannelsBinding
 import com.thecloseapp.closechannelsample.databinding.ItemChannelBinding

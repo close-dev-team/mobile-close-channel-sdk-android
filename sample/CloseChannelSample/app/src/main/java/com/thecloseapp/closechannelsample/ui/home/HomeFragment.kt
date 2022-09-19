@@ -12,9 +12,9 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import com.google.android.gms.tasks.Task
 import com.google.firebase.messaging.FirebaseMessaging
-import com.starlightideas.close.sdk.Channel
-import com.starlightideas.close.sdk.CloseChannelController
-import com.starlightideas.close.sdk.CloseChannelError
+import com.thecloseapp.close.channel.sdk.Channel
+import com.thecloseapp.close.channel.sdk.CloseChannelController
+import com.thecloseapp.close.channel.sdk.CloseChannelError
 import com.thecloseapp.closechannelsample.BuildConfig
 import com.thecloseapp.closechannelsample.databinding.DialogRegisterBinding
 import com.thecloseapp.closechannelsample.databinding.DialogStorePropertyBinding

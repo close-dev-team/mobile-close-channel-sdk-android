@@ -9,7 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.starlightideas.close.sdk.CloseChannelNotification
+import com.thecloseapp.close.channel.sdk.CloseChannelNotification
 import com.thecloseapp.closechannelsample.databinding.ActivitySampleMainBinding
 import com.thecloseapp.closechannelsample.ui.notifications.MessagesFragment
 

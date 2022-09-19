@@ -6,13 +6,13 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import com.starlightideas.close.sdk.CloseChannelController
-import com.starlightideas.close.sdk.CloseChannelNotification
+import com.thecloseapp.close.channel.sdk.CloseChannelController
+import com.thecloseapp.close.channel.sdk.CloseChannelNotification
 
 class CloseSampleFirebaseMessagingService : FirebaseMessagingService() {
 
     companion object {
-        private const val TAG = "CloseSampleFirebaseMessagingService"
+        private const val TAG = "CloseSampleFirebaseMS"
     }
 
     override fun onNewToken(refreshedToken: String) {
