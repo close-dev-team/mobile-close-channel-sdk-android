@@ -107,11 +107,23 @@ i.e.
     "api_base_url": "https://api.sdk-sandbox.closetest.nl:16443/"
 }
 ```
+Please ask Close for your api base url
 
 #### "api_base_url (...) is not a valid url"
 
 There should be a property called 'api_base_url' and it should be filled with the url of the api of the Close SDK. 
 Please check the url if it is formatted correctly. i.e. check the url in a browser.
+
+#### "api_access_token property was not found"
+
+In the `close_channel.json` there should be a property called `api_access_token` and it should be filled with the access token of the api of the Close SDK
+i.e. 
+```json
+{
+    "api_access_token": "secret_api_access_token"
+}
+```
+Please ask Close for your api access token
 
 #### More info
 For more info about configuration check out the README under section [Step 2: Using the SDK](../README.md#step-2-using-the-sdk).
