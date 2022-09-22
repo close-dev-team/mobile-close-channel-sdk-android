@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Close Channel Sample App</string>
     <string name="title_activity_sample_main" translatable="false">SampleMainActivity</string>
-    <string name="title_home" translatable="false">SDK Home</string>
+    <string name="title_home" translatable="false">SDK Sample Home</string>
     <string name="title_channels" translatable="false">Channels</string>
     <string name="title_messages" translatable="false">Messages</string>
     <string name="notification_messages_channel_id" translatable="false">messages</string>
