@@ -81,17 +81,11 @@ When you have arranged that, then add Close to your Gradle build.
 ```
 dependencies {
     ...
-    implementation "com.thecloseapp.close:close-channel:1.2.1"
+    implementation "com.thecloseapp.close:close-channel:1.2.2"
 }
 
 ```
 Note: Please check out if you are using the latest version, android studio would probably point out that you can update the version number
-
-* In gradle.properties make sure you enable jetifier on true
-
-```
-android.enableJetifier=true
-```
 
 * Sync project and build and you are good to go
 
