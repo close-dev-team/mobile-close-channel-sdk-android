@@ -50,7 +50,7 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.3.3"
 
     // SDK
-    implementation "com.thecloseapp.close:close-channel:1.2.1"
+    implementation "com.thecloseapp.close:close-channel:1.2.2"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
