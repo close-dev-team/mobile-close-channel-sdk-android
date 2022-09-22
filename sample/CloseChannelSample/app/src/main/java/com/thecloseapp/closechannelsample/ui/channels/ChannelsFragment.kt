@@ -74,8 +74,10 @@ class ChannelsFragment : Fragment() {
                     }
 
                     val onFailure = { closeChannelError: CloseChannelError ->
-                        Toast.makeText(context, "Error:$closeChannelError", Toast.LENGTH_LONG)
-                            .show()
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+                            Toast.makeText(context, "Error:$closeChannelError", Toast.LENGTH_LONG)
+                                .show()
+                        }
                     }
 
                     closeChannelController.getChannels(onSuccess, onFailure)

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.thecloseapp.close.channel.sdk.CloseChannelController
@@ -64,16 +65,20 @@ class MessagesFragment : Fragment() {
 
                 withContext(Dispatchers.Main) {
                     val onSuccess = { fragment: Fragment ->
-                        activity?.supportFragmentManager?.beginTransaction()
-                            ?.replace(R.id.messages_container_view, fragment)
-                            ?.commit()
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+                            activity?.supportFragmentManager?.beginTransaction()
+                                ?.replace(R.id.messages_container_view, fragment)
+                                ?.commit()
 
-                        binding.textMessages.visibility = View.GONE
+                            binding.textMessages.visibility = View.GONE
+                        }
                     }
 
                     val onFailure = { closeChannelError: CloseChannelError ->
-                        Toast.makeText(context, "Error:$closeChannelError", Toast.LENGTH_LONG)
-                            .show()
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+                            Toast.makeText(context, "Error:$closeChannelError", Toast.LENGTH_LONG)
+                                .show()
+                        }
                     }
 
                     if (channelOpenInInfoView) {
