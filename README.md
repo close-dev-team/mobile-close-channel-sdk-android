@@ -81,7 +81,7 @@ When you have arranged that, then add Close to your Gradle build.
 ```
 dependencies {
     ...
-    implementation "com.thecloseapp.close:close-channel:1.2.2"
+    implementation "com.thecloseapp.close:close-channel:1.2.3"
 }
 
 ```
