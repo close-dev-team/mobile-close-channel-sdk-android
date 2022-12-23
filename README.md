@@ -486,6 +486,10 @@ When you use the callback functions onSuccess and onFailure and you want to upda
     
 # Where to continue from here?
 
+## Documentation section
+
+Further documentation on specific tasks see: [documentation section](./doc/).
+
 ## SDK Reference Documentation
 
 The code samples in the sections above have been simplified by not showing all parameters. Make sure you read the [SDK reference documentation](https://close-dev-team.github.io/mobile-close-channel-sdk-android/-mobile%20-close%20-channel%20-s-d-k/com.thecloseapp.close.channel.sdk/index.html) for all details.
