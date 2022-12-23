@@ -54,7 +54,9 @@ To add the SDK to your project follow the steps in this section.
 #### Adding the Close framework
 When you have arranged that, then add Close to your Gradle build.
 
-* Add our (private) repository to the repositories section. This could be in the `build.gradle` in your module or in the `settings.gradle` (depending on your gradle version)
+* Add our (private) repository to the repositories section. 
+    * This could be in the `build.gradle` in your module under section android (for older projects)
+    * Or this could be in the `settings.gradle` under section dependencyResolutionManagement (for new projects)
 * Also add jcenter() if you don't have it yet.
 
 ```
@@ -65,8 +67,8 @@ When you have arranged that, then add Close to your Gradle build.
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
             credentials {
-                username = github_user
-                password = github_key
+                username = "github_user"
+                password = "github_key"
             }
         }
     }
@@ -81,7 +83,7 @@ When you have arranged that, then add Close to your Gradle build.
 ```
 dependencies {
     ...
-    implementation "com.thecloseapp.close:close-channel:1.2.2"
+    implementation "com.thecloseapp.close:close-channel:1.2.3"
 }
 
 ```
@@ -140,8 +142,8 @@ android {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
             credentials {
-                username = github_user // Please replace this by given credentials
-                password = github_key // Please replace this by given credentials
+                username = "github_user" // Please replace this by given credentials
+                password = "github_key" // Please replace this by given credentials
             }
         }
     }
@@ -160,6 +162,44 @@ dependencies {
 ```
 
 </details>
+
+In new project settings.gradle is used to add resources
+
+<details>
+<summary>Example of a minimal settings.gradle</summary>
+
+```
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
+
+            credentials {
+                username = "sample"
+                password = "github_key"
+            }
+        }
+    }
+}
+rootProject.name = "Close Channel Sample"
+include ':app'
+
+```
+
+</details>
+
 
 ## Step 2: Using the SDK
 
