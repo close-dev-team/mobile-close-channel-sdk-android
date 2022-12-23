@@ -236,7 +236,7 @@ import com.thecloseapp.close.channel.sdk.CloseChannelController
   
 class YourClass {  
     ...
-    val closeChannelController = CloseChannelController.getInstance(requireActivity().application)
+    val closeChannelController = CloseChannelController.getInstance(application)
     ...
 }
 ```
