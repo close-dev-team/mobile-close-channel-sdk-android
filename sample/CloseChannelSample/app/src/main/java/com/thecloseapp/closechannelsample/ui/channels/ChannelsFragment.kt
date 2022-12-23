@@ -21,7 +21,7 @@ import com.thecloseapp.close.channel.sdk.CloseChannelError
 import com.thecloseapp.closechannelsample.R
 import com.thecloseapp.closechannelsample.databinding.FragmentChannelsBinding
 import com.thecloseapp.closechannelsample.databinding.ItemChannelBinding
-import com.thecloseapp.closechannelsample.ui.notifications.MessagesFragment
+import com.thecloseapp.closechannelsample.ui.messages.MessagesFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat

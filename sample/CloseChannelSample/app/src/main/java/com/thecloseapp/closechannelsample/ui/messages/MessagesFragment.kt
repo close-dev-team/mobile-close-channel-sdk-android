@@ -1,4 +1,4 @@
-package com.thecloseapp.closechannelsample.ui.notifications
+package com.thecloseapp.closechannelsample.ui.messages
 
 import android.os.Bundle
 import android.view.LayoutInflater

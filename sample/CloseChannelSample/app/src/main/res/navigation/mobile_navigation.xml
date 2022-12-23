@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_messages"
-        android:name="com.thecloseapp.closechannelsample.ui.notifications.MessagesFragment"
+        android:name="com.thecloseapp.closechannelsample.ui.messages.MessagesFragment"
         android:label="@string/title_messages"
         tools:layout="@layout/fragment_messages" />
 </navigation>

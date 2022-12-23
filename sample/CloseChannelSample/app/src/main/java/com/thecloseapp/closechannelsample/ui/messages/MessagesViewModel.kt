@@ -1,4 +1,4 @@
-package com.thecloseapp.closechannelsample.ui.notifications
+package com.thecloseapp.closechannelsample.ui.messages
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

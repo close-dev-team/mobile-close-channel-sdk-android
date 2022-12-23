@@ -11,7 +11,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.thecloseapp.close.channel.sdk.CloseChannelNotification
 import com.thecloseapp.closechannelsample.databinding.ActivitySampleMainBinding
-import com.thecloseapp.closechannelsample.ui.notifications.MessagesFragment
+import com.thecloseapp.closechannelsample.ui.messages.MessagesFragment
 
 class SampleMainActivity : AppCompatActivity() {
 
