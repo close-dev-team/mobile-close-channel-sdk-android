@@ -56,7 +56,7 @@ When you have arranged that, then add Close to your Gradle build.
 
 * Add our (private) repository to the repositories section. 
     * This could be in the `build.gradle` in your module under section android (for older projects)
-    * This could be in the `settings.gradle` under section dependencyResolutionManagement (for new projects)
+    * Or this could be in the `settings.gradle` under section dependencyResolutionManagement (for new projects)
 * Also add jcenter() if you don't have it yet.
 
 ```
