@@ -13,7 +13,7 @@ If you still run into problems don't hesitate to contact us via https://sdk.thec
 
 To make an easy start, be sure you have these versions:
 
-* minSdkVersion 23
+* minSdkVersion 21
 * targetSdkVersion 33
 
 ⚠️ For min sdk version you can only use the same or a higher version (if you need a lower version, please let us know)</br>
@@ -112,12 +112,12 @@ plugins {
 android {
     namespace 'com.thecloseapp.sample'
 
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.thecloseapp.sample"
-        minSdk 23
-        targetSdk 30
+        minSdk 21
+        targetSdk 33
         versionCode 1
         versionName "1.0.0"
 
