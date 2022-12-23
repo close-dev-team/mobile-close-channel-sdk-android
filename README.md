@@ -142,7 +142,7 @@ android {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
             credentials {
-                username = "github_user" // Please replace this by given credentials
+                username = "github_user" // User is not relevant
                 password = "github_key" // Please replace this by given credentials
             }
         }
@@ -187,8 +187,8 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
 
             credentials {
-                username = "sample"
-                password = "github_key"
+                username = "github_user" // User is not relevant
+                password = "github_key" // Please replace this by given credentials
             }
         }
     }
