@@ -55,8 +55,8 @@ To add the SDK to your project follow the steps in this section.
 When you have arranged that, then add Close to your Gradle build.
 
 * Add our (private) repository to the repositories section. 
-** This could be in the `build.gradle` in your module (for older projects)
-** This couldd be in the `settings.gradle` under the section dependencyResolutionManagement (for new projects)
+    * This could be in the `build.gradle` in your module under section android (for older projects)
+    * This could be in the `settings.gradle` under section dependencyResolutionManagement (for new projects)
 * Also add jcenter() if you don't have it yet.
 
 ```
