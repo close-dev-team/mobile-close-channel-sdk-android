@@ -503,6 +503,10 @@ the Close push notifications. It's not hard, we do most of the work for you. [Co
 
 If you want to integrate with multiple channels and want to implement an overview of channels, [be sure to checkout this document](./doc/list_of_channels.md)
 
+## Open a channel in a tab
+
+If you want to open a channel in your own tab or other UI element, [be sure to checkout this document](./doc/open_channel_in_tab.md)
+
 ## Create your own flows
 
 With the Close Builder you can create your own flows to send to your users. Use the account provided by Close to login and start building!
