@@ -64,7 +64,7 @@ When you have arranged that, then add Close to your Gradle build.
         ...
         jcenter()
         maven {
-            name = "GitHubPackages"
+            name = "ClosePackages"
             url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-android")
             credentials {
                 username = "github_user"
