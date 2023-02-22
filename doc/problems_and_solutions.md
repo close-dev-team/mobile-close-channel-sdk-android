@@ -125,6 +125,20 @@ i.e.
 ```
 Please ask Close for your api access token
 
+### Library conflict
+
+If you get a library conflict you can resolve it most times by exclude the conflicted library from the close channel library
+
+#### java.lang.NoClassDefFoundError: Failed resolution of: Landroidx/work/impl/utils/futures/AbstractFuture;
+
+If that happpens you can exclude the com.google.guave listenablefuture
+i.e.
+```
+    implementation("com.thecloseapp.close:close-channel:1.4.0") {
+        exclude("com.google.guava", "listenablefuture")
+    }
+```
+
 #### More info
 For more info about configuration check out the README under section [Step 2: Using the SDK](../README.md#step-2-using-the-sdk).
 
