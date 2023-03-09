@@ -332,7 +332,7 @@ To show a channel, you can simple call the function below to open the last added
   ```kotlin
     private fun openChannelInfo() {
         val closeChannelController = CloseChannelController.getInstance(application)
-        closeChannelController.openChannelMessagesView(activity = this)
+        closeChannelController.openChannelInfoView(activity = this)
     }
   ```
 
