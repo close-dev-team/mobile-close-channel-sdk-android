@@ -334,13 +334,13 @@ To show a channel, you can simple call the function below to open the last added
     }
 ```
 
+ There are 2 ways of showing the channel
+ * Channel messages view. This shows messages in chat-like way with text balloons, ordered by date/time of sending
+ * Channel info view. This shows informational messages, tickets and bought products, ordered by pre defined order
+
 <details>
   <summary>Showing the channel info view</summary>
-
-   There are 2 ways of showing the channel
-   * Channel messages view. This shows messages in chat-like way with text balloons, ordered by sending date/time
-   * Channel info view. This shows informational messages, tickets and bought products, ordered by pre defined order
-   
+  
    The display the info view use the following code snippet
 
   ```kotlin
@@ -378,12 +378,14 @@ Alternatively you can retrieve a list of channels and use the channel ID to open
 ```
 </details>
    
-   
-<details>
-  <summary>Display channel in your own view</summary>
-
-Alternatively you can retrieve the fragment to display on your own activity/tab view or where you want
+### Display a channel in your own view
+  
+Alternatively you can retrieve the fragment with the channel, to display on your own activity or other view (i.e. tab)
 * Note: You should always use a large part (80% or more) of your screen to display the close channel correctly
+
+  
+<details>
+  <summary>Display channel fragment on container view</summary>
 
 ```kotlin
     private fun openChannelInPage() {
