@@ -73,15 +73,15 @@ When you have arranged that, then add Close to your Gradle build.
             url = uri("https://maven.pkg.github.com/close-dev-team/mobile-close-channel-sdk-library-android")
             credentials {
                 username = "github_user"
-                password = "github_key"
+                password = "github_access_token"
             }
         }
     }
 ```
 
 * Fill in our credentials at (please contact us to retrieve credentials)
-  * github_user - Github user name
-  * password - Github password / access key
+  * github_user - Github user name (can be any user name)
+  * password - Github access token
 
 * In your build.gradle in your module add the SDK dependancy in dependancies section
 
