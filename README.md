@@ -24,11 +24,9 @@ Target sdk version is currently the latest. You can only use the same or a lower
 ### What you will need from us to start integration
 The following information you will need from us to start integrating the Close Channel SDK
 * github access token to download the library from private repository
-* close_channel.json 
-   * that includes api base url and api access token
-   * An API base URL and access token to access our sandbox environment can be found below
-* closeCode for adding a channel
-   * Or use SDKDEMO to start testing
+* close_channel.json
+   * That includes API base url and API access token (values to access our sandbox environment can be found below)
+* closeCode for adding a channel (or use SDKDEMO to start testing)
 
 ### Permissions
 
