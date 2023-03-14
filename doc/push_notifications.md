@@ -117,7 +117,10 @@ class ApplicationMessagingService : FirebaseMessagingService() {
 }
 ```
 </details>
-          
+
+### Best practices
+
+When a messages view or info view is opened it is a good practice not to show a toast with the message for that particular view. The user already is in that view and the incoming message will be shown anyway. You can use the openInInfoView boolean in CloseChannelNotification to see for what view the message is meant.          
 
 ## Handling taps on notification
 
