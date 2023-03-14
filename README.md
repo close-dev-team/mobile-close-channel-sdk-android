@@ -375,7 +375,7 @@ Alternatively you can retrieve a list of channels and use the channel ID to open
   <summary>Display channel in your own view</summary>
 
 Alternatively you can retrieve the fragment to display on your own activity/tab view or where you want
-  * Note: You should always use a large part (80% or more) of your screen to display the close channel correctly
+* Note: You should always use a large part (80% or more) of your screen to display the close channel correctly
 
 ```kotlin
     private fun openChannelInPage() {
