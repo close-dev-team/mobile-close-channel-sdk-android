@@ -369,6 +369,47 @@ Alternatively you can retrieve a list of channels and use the channel ID to open
     }
 ```
 </details>
+   
+   
+<details>
+  <summary>Display channel in your own view</summary>
+
+Alternatively you can retrieve the fragment to display on your own activity/tab view or where you want
+  * Note: You should always use a large part (80% or more) of your screen to display the close channel correctly
+
+```kotlin
+    private fun openChannelInPage() {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            withContext(Dispatchers.Default) {
+                val closeChannelController = CloseChannelController.getInstance(requireActivity().application)
+
+                withContext(Dispatchers.Main) {
+                    val onSuccess = { fragment: Fragment ->
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+                            activity?.supportFragmentManager?.beginTransaction()
+                                ?.replace(R.id.messages_container_view, fragment)
+                                ?.commit()
+                        }
+                    }
+
+                    val onFailure = { closeChannelError: CloseChannelError ->
+                        if (lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+                            Toast.makeText(context, "Error:$closeChannelError", Toast.LENGTH_LONG).show()
+                        }
+                    }
+
+                    closeChannelController.getChannelMessagesFragment(
+                        onSuccess = onSuccess,
+                        onFailure = onFailure
+                    )
+                }
+            }
+        }
+    }
+
+```
+</details>
+
 
 # Tying it all together
 
