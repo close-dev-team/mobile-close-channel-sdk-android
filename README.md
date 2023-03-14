@@ -19,8 +19,7 @@ To make an easy start, be sure you have these versions:
 ⚠️ For min sdk version you can only use the same or a higher version (if you need a lower version, please let us know)</br>
 Target sdk version is currently the latest. You can only use the same or a lower version (if you need a higher version, please let us know)
 
-⚠️ tablet form factor and landscape mode are not supported</br>
-Our Close channel SDK works best on phones in only in portrait mode
+
 
 ### What you will need from us to start integration
 The following information you will need from us to start integrating the Close Channel SDK
@@ -36,6 +35,10 @@ No special permissions are needed
 
 The SDK supports `en_GB`, `en_US`, `nl` and `de` localisations. The default localisation is `en_GB`.
 
+### Orientation
+
+⚠️ tablet form factor and landscape mode are not supported</br>
+Our Close channel SDK works best on phones in only in portrait mode
 
 # Quick start
 
