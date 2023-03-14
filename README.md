@@ -330,9 +330,13 @@ To show a channel, you can simple call the function below to open the last added
 ```
 
 <details>
-  <summary>An alternative channel view</summary>
+  <summary>Showing the channel info view</summary>
 
-  Besides the channel messages view, which shows messages in chat-like way with text balloons, there is an alternative view which is called the Info view. In this view it is possible to show informational messages, tickets and bought products.
+   There are 2 ways of showing the channel
+   * Channel messages view. This shows messages in chat-like way with text balloons, ordered by sending date/time
+   * Channel info view. This shows informational messages, tickets and bought products, ordered by pre defined order
+   
+   The display the info view use the following code snippet
 
   ```kotlin
     private fun openChannelInfo() {
@@ -340,7 +344,6 @@ To show a channel, you can simple call the function below to open the last added
         closeChannelController.openChannelInfoView(activity = this)
     }
   ```
-
 </details>
 
 <details>
