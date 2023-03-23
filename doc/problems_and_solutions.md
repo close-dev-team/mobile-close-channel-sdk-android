@@ -109,6 +109,17 @@ i.e.
 ```
 Please ask Close for your api base url
 
+#### "api_base_url property was not found" - only when building release
+
+This can be because you are using Proguard and it obfuscates the Close Channel classes and therefore can not read the right properties.
+
+This can be solved by adding an exception in the Proguard file (proguard-rules.pro)
+```
+...
+-keep class com.thecloseapp.close.channel.sdk.** { *; }
+...
+```
+
 #### "api_base_url (...) is not a valid url"
 
 There should be a property called 'api_base_url' and it should be filled with the url of the api of the Close SDK. 
