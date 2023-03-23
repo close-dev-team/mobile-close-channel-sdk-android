@@ -136,6 +136,9 @@ i.e.
 ```
 Please ask Close for your api access token
 
+#### More info
+For more info about configuration check out the README under section [Step 2: Using the SDK](../README.md#step-2-using-the-sdk).
+
 ### Library conflict
 
 If you get a library conflict you can resolve it most times by exclude the conflicted library from the close channel library
@@ -149,7 +152,4 @@ i.e.
         exclude("com.google.guava", "listenablefuture")
     }
 ```
-
-#### More info
-For more info about configuration check out the README under section [Step 2: Using the SDK](../README.md#step-2-using-the-sdk).
 
