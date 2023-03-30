@@ -93,7 +93,7 @@ When you have arranged that, then add Close to your Gradle build.
 ```
 dependencies {
     ...
-    implementation "com.thecloseapp.close:close-channel:1.4.1"
+    implementation "com.thecloseapp.close:close-channel:1.5.1"
 }
 
 ```
