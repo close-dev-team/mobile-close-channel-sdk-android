@@ -118,6 +118,10 @@ class ApplicationMessagingService : FirebaseMessagingService() {
 ```
 </details>
 
+### Best practices
+
+When a messages view or info view is opened it is a good practice not to show a toast with the message for that particular view. The user already is in that view and the incoming message will be shown anyway. You can use the openInInfoView boolean in CloseChannelNotification to see for what view the message is meant.        
+
 ## Opening app on push notification (when app is not open)
 
 When the app is not active. The OS is showing push notification. If you want to open the app when the user taps the notification, make sure you add the action for 'com.thecloseapp.action.MESSAGE' int a intent filter in the activity you want to open in the AndroidManifest.
@@ -136,33 +140,6 @@ Example to add the filter to open app in AndroidManifest.xml
 	    ...
         </activity>
 ```
-
-If you want to use a custom channel and/or icon, then add the following lines to the application tag of your AndroidManifest.xml
-
-```xml
-    <application>
-	...
-        <!-- Notification meta data -->
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="@string/notification_messages_channel_id" />
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@mipmap/close_sample_sdk_icon" />
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/black" />
-    </application>
-```
-
-For a full blown example of the manifest, please check out this one from the sample app
-* [AndroidManifest.xml](../sample/CloseChannelSample/app/src/main/AndroidManifest.xml)
-
-
-### Best practices
-
-When a messages view or info view is opened it is a good practice not to show a toast with the message for that particular view. The user already is in that view and the incoming message will be shown anyway. You can use the openInInfoView boolean in CloseChannelNotification to see for what view the message is meant.          
-
 ## Handling taps on notification
 
 To handle notifications and open the Messages or Info view you can also can use the `CloseChannelNotification` convenience class. Not only to easily distinguish between Close notifications and your own, but also to check if the push notification is meant for either the Messages or Info view by checking the `openInInfoView` boolean.
@@ -188,6 +165,26 @@ To handle notifications and open the Messages or Info view you can also can use 
 
 ```
 
+## Custom channel or icon
+
+If you want to use a custom channel and/or icon, then add the following lines to the application tag of your AndroidManifest.xml
+
+```xml
+    <application>
+	...
+        <!-- Notification meta data -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/notification_messages_channel_id" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/close_sample_sdk_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/black" />
+    </application>
+```
+
 ## Not using the CloseChannelNotification convenience class
 
 If you prefer not to use the CloseChannelNotification class and parse the push notification message yourself, check out the reference documentation
@@ -195,6 +192,7 @@ If you prefer not to use the CloseChannelNotification class and parse the push n
 ## Sample
 
 Check out these classes in the sample project for more information 
+* [AndroidManifest.xml](../sample/CloseChannelSample/app/src/main/AndroidManifest.xml)
 * [Firebase messaging service to pickup firebase messages](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/CloseSampleFirebaseMessagingService.kt)
 * [Home Fragment with example to send push info](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/ui/home/HomeFragment.kt) 
 
