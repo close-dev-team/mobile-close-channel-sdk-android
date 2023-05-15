@@ -118,6 +118,47 @@ class ApplicationMessagingService : FirebaseMessagingService() {
 ```
 </details>
 
+## Opening app on push notification (when app is not open)
+
+When the app is not active. The OS is showing push notification. If you want to open the app when the user taps the notification, make sure you add the action for 'com.thecloseapp.action.MESSAGE' int a intent filter in the activity you want to open in the AndroidManifest.
+
+Example to add the filter to open app in AndroidManifest.xml
+
+```xml
+        <activity
+            android:name=".SampleMainActivity"
+            android:exported="true">
+           ...
+	   <intent-filter>
+                <action android:name="com.thecloseapp.action.MESSAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+	    ...
+        </activity>
+```
+
+If you want to use a custom channel and/or icon, then add the following lines to the application tag of your AndroidManifest.xml
+
+```xml
+    <application>
+	...
+        <!-- Notification meta data -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/notification_messages_channel_id" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/close_sample_sdk_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/black" />
+    </application>
+```
+
+For a full blown example of the manifest, please check out this one from the sample app
+* [AndroidManifest.xml](../sample/CloseChannelSample/app/src/main/AndroidManifest.xml)
+
+
 ### Best practices
 
 When a messages view or info view is opened it is a good practice not to show a toast with the message for that particular view. The user already is in that view and the incoming message will be shown anyway. You can use the openInInfoView boolean in CloseChannelNotification to see for what view the message is meant.          
