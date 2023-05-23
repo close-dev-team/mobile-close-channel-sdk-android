@@ -75,13 +75,15 @@ class YourMessagingService : FirebaseMessagingService() {
         }
     }
 ```
-Example of a full Custom FirebaseMessagingService<
-* [Firebase messaging service to pickup firebase messages](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/CloseSampleFirebaseMessagingService.kt)
 
 
 ### Best practices
 
 When a messages view or info view is opened it is a good practice not to show a toast with the message for that particular view. The user already is in that view and the incoming message will be shown anyway. You can use the openInInfoView boolean in CloseChannelNotification to see for what view the message is meant.        
+
+### Example of a full Custom FirebaseMessagingService<
+* [Firebase messaging service to pickup firebase messages](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/CloseSampleFirebaseMessagingService.kt)
+
 
 ## Opening app on push notification (when app is not open)
 
@@ -101,6 +103,9 @@ Example to add the filter to open app in AndroidManifest.xml
 	    ...
         </activity>
 ```
+See also full example of Android Manifest
+* [AndroidManifest.xml](../sample/CloseChannelSample/app/src/main/AndroidManifest.xml)
+
 ## Handling taps on notification
 
 To handle notifications and open the Messages or Info view you can also can use the `CloseChannelNotification` convenience class. Not only to easily distinguish between Close notifications and your own, but also to check if the push notification is meant for either the Messages or Info view by checking the `openInInfoView` boolean.
