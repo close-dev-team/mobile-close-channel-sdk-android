@@ -571,8 +571,11 @@ You can also [open a channel in your own tab or other UI element](./doc/open_cha
 
 With the Close Builder you can create your own flows to send to your users. Use the account provided by Close to login and start building!
 
-![](https://github.com/close-dev-team/mobile-close-channel-sdk-ios/raw/main/doc/images/builder.png)
-
+In the following video we explain how to send a simple text messages   
+  
+https://www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2
+  
+(in the channel you also find other tutorials)  
     
 ## Problems and solutions
 
