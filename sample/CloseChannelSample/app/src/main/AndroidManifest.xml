@@ -39,10 +39,10 @@
             android:value="@string/notification_messages_channel_id" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@mipmap/close_sample_sdk_icon" />
+            android:resource="@drawable/ic_notifications_black_24dp" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/black" />
+            android:resource="@color/blue_700" />
     </application>
 
 </manifest>

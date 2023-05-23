@@ -4,6 +4,7 @@ import android.content.Intent
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.thecloseapp.close.channel.sdk.CloseChannelController
@@ -40,9 +41,10 @@ class CloseSampleFirebaseMessagingService : FirebaseMessagingService() {
             val notificationIntent = Intent(this, SampleMainActivity::class.java)
             notificationIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
 
-            val smallIcon = R.mipmap.close_sample_sdk_icon
+            val smallIcon = R.drawable.ic_notifications_black_24dp
             val priority = NotificationCompat.PRIORITY_HIGH
-            closeNotification.sendNotification(this, notificationIntent, smallIcon, priority)
+            val color = ContextCompat.getColor(this, R.color.teal_700)
+            closeNotification.sendNotification(this, notificationIntent, smallIcon, priority, color)
         } else {
             Log.d(TAG, "remoteMessage received but not a close notification")
             // Custom code to handle own application

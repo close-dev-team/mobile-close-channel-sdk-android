@@ -11,7 +11,7 @@ android {
         minSdk 21
         targetSdk 33
         versionCode 1
-        versionName "1.2"
+        versionName "1.5.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,7 +50,7 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.3.3"
 
     // SDK
-    implementation "com.thecloseapp.close:close-channel:1.5.5"
+    implementation "com.thecloseapp.close:close-channel:1.5.6"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
