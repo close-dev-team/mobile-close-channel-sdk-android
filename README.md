@@ -573,11 +573,14 @@ With the Close Builder you can create your own flows to send to your users. Use 
 
 In the following video we explain how to send a simple text messages   
 
-[![Close Builder sending text message](//github.com/close-dev-team/mobile-close-channel-sdk-android/assets/108068516/9359ea14-233a-4039-930a-296c2c340b76)](//www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2 "Close Builder sending text message")
+[![Close Builder sending text message](//github.com/close-dev-team/mobile-close-channel-sdk-android/assets/108068516/9359ea14-233a-4039-930a-296c2c340b76)](//www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2 "Close Builder Sending Text Message")
 
 https://www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2
 
 https://www.youtube.com/watch?v=AkxLAJ0NQ8o
+  
+  Test
+[![work doesn't happen at work](http://i.imgur.com/ASYsjjX.png)](https://youtu.be/5XD2kNopsUs?t=16s "Meetings and Managers - Click to Watch!")
   
 (in the youtube channel you also find other tutorials)  
     
