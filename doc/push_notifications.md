@@ -92,7 +92,7 @@ Example to add the filter to open app in AndroidManifest.xml
 
 ```xml
         <activity
-            android:name=".SampleMainActivity"
+            android:name=".YourMainActivity"
             android:exported="true">
            ...
 	   <intent-filter>
