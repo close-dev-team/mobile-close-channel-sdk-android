@@ -65,10 +65,10 @@ class YourMessagingService : FirebaseMessagingService() {
             val notificationIntent = Intent(this, YourActivity::class.java) // replace activity with the activity you want to open
             notificationIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
 
-            // Use your own icon to display the push notification
-            val smallIcon = R.mipmap.ic_launcher_round // Replace by own icon
-            val priority = NotificationCompat.PRIORITY_HIGH
-            closeNotification.sendNotification(this, notificationIntent, smallIcon, priority)
+            val smallIcon = R.drawable.ic_notifications_black_24dp // Replace by own icon
+            val priority = NotificationCompat.PRIORITY_HIGH // Choose the priority
+            val color = ContextCompat.getColor(this, R.color.teal_700) // Replace by own color
+            closeNotification.sendNotification(this, notificationIntent, smallIcon, priority, color)
         } else {
             Log.d("Close Channel SDK", "remoteMessage received but not a close notification")
             // Custom code to handle own application
