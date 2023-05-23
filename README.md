@@ -571,17 +571,10 @@ You can also [open a channel in your own tab or other UI element](./doc/open_cha
 
 With the Close Builder you can create your own flows to send to your users. Use the account provided by Close to login and start building!
 
-In the following video we explain how to send a simple text messages   
+In the following video we explain how to send a simple text messages  https://www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2
 
 [![Close Builder sending text message](https://github-production-user-asset-6210df.s3.amazonaws.com/108068516/240335698-9359ea14-233a-4039-930a-296c2c340b76.png)](//www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2 "Close Builder Sending Text Message")
 
-https://www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2
-
-https://www.youtube.com/watch?v=AkxLAJ0NQ8o
-  
-  Test
-[![work doesn't happen at work](http://i.imgur.com/ASYsjjX.png)](https://youtu.be/5XD2kNopsUs?t=16s "Meetings and Managers - Click to Watch!")
-  
 (in the youtube channel you also find other tutorials)  
     
 ## Problems and solutions
