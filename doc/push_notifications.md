@@ -45,7 +45,7 @@ class YourMessagingService : FirebaseMessagingService() {
 Note: Please make sure you call this function again if permissionGranted is changed for the user. (i.e. User gave permission)
 
 
-## Showing Close push notifications
+## Showing in app Close push notifications
 
 When the app is not active, the OS handles the push notifications. When the app is active you need to do that yourself. You can use the `CloseChannelNotification` convenience class to easily distinguish between Close notifications and your own.
 
@@ -75,48 +75,9 @@ class YourMessagingService : FirebaseMessagingService() {
         }
     }
 ```
+Example of a full Custom FirebaseMessagingService<
+* [Firebase messaging service to pickup firebase messages](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/CloseSampleFirebaseMessagingService.kt)
 
-<details>
-    <summary>Example of a full Custom FirebaseMessagingService</summary>
-        
-```kotlin
-class ApplicationMessagingService : FirebaseMessagingService() {
-
-    override fun onNewToken(refreshedToken: String) {
-        super.onNewToken(refreshedToken)
-        Log.d("Close Channel SDK", "Refreshed token: $refreshedToken")
-
-        val permissionGranted = (NotificationManagerCompat.from(application).areNotificationsEnabled())
-        val onSuccess = { isPushEnabled: Boolean ->
-            Log.v("Close Channel SDK", "register push - isPushEnabled:${isPushEnabled}")
-            Unit
-        }
-        CloseChannelController.getInstance(application).registerPushInfo(refreshedToken, permissionGranted, onSuccess)
-    }
-
-    override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        super.onMessageReceived(remoteMessage)
-
-        Log.d("Close Channel SDK", "onMessageReceived: remoteMessage:${remoteMessage.notification}")
-
-        val closeNotification = CloseChannelNotification.from(remoteMessage)
-        if (closeNotification != null) {
-            // Create and set a pending intent for starting Your Activity
-            val notificationIntent = Intent(this, YourActivity::class.java) // replace activity with the activity you want to open
-            notificationIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-
-            // Use your own icon to display the push notification
-            val smallIcon = R.mipmap.ic_launcher_round // Replace by own icon
-            val priority = NotificationCompat.PRIORITY_HIGH
-            closeNotification.sendNotification(this, notificationIntent, smallIcon, priority)
-        } else {
-            Log.d("Close Channel SDK", "remoteMessage received but not a close notification")
-            // Custom code to handle own push notifications
-        }
-    }
-}
-```
-</details>
 
 ### Best practices
 
@@ -164,6 +125,8 @@ To handle notifications and open the Messages or Info view you can also can use 
     }
 
 ```
+See example of home fragment
+* [Home Fragment with example to send push info](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/ui/home/HomeFragment.kt) 
 
 ## Custom channel or icon
 
@@ -185,13 +148,16 @@ If you want to use a custom channel and/or icon, then add the following lines to
     </application>
 ```
 
+See also full example of Android Manifest
+* [AndroidManifest.xml](../sample/CloseChannelSample/app/src/main/AndroidManifest.xml)
+
 ## Not using the CloseChannelNotification convenience class
 
 If you prefer not to use the CloseChannelNotification class and parse the push notification message yourself, check out the reference documentation
 
 ## Sample
 
-Check out these classes in the sample project for more information 
+Check out these classes in the sample project that were used to handle Close push notifications for more information 
 * [AndroidManifest.xml](../sample/CloseChannelSample/app/src/main/AndroidManifest.xml)
 * [Firebase messaging service to pickup firebase messages](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/CloseSampleFirebaseMessagingService.kt)
 * [Home Fragment with example to send push info](../sample/CloseChannelSample/app/src/main/java/com/thecloseapp/closechannelsample/ui/home/HomeFragment.kt) 
