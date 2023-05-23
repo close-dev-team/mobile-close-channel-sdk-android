@@ -572,8 +572,9 @@ You can also [open a channel in your own tab or other UI element](./doc/open_cha
 With the Close Builder you can create your own flows to send to your users. Use the account provided by Close to login and start building!
 
 In the following video we explain how to send a simple text messages   
+ 
   
-  [![IMAGE ALT TEXT](http://img.youtube.com/vi/AkxLAJ0NQ8o/0.jpg)]([http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE](https://www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2) "Close Builder sending text message")
+  [![Close Builder sending text message](https://github.com/close-dev-team/mobile-close-channel-sdk-android/assets/108068516/9359ea14-233a-4039-930a-296c2c340b76)]([http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE](https://www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2) "Close Builder sending text message")
 
 https://www.youtube.com/watch?v=AkxLAJ0NQ8o&list=PLhVIgEB_sAkYYpItjNWPjr2HVsPoLNxxP&index=2
 
