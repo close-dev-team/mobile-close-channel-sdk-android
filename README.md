@@ -22,8 +22,8 @@ The following information you will need from us to start integrating the Close C
 ### Android SDK version
 To make an easy start, be sure you have these versions:
 
-* minSdkVersion 21
-* targetSdkVersion 33
+* minSdkVersion 23
+* targetSdkVersion 34
 
 ⚠️ For min sdk version you can only use the same or a higher version (if you need a lower version, please let us know)</br>
 Target sdk version is currently the latest. You can only use the same or a lower version (if you need a higher version, please let us know)
