@@ -104,7 +104,7 @@ In the `close_channel.json` there should be a property called `api_base_url` and
 i.e. 
 ```json
 {
-    "api_base_url": "https://api.sdk-sandbox.closetest.nl:16443/"
+    "api_base_url": "https://api.sdk-sandbox.closeplatform.com/"
 }
 ```
 Please ask Close for your api base url
